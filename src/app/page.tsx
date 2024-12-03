@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <>
-    <Script strategy="beforeInteractive" src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" />
+    <Script strategy="beforeInteractive" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" />
     <Script strategy="beforeInteractive" src="https://threejs.org/examples/js/libs/stats.min.js" />
     <section>
       <ParticleEffect />
