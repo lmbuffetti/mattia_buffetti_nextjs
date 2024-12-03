@@ -4,7 +4,7 @@ import {
 
 export const sidebarNavigation = [
   {
-    label: 'Dashboard',
+    label: 'Home',
     icon: <HomeIcon className="w-6" />,
     href: `/`,
   },

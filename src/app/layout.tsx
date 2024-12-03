@@ -1,4 +1,4 @@
-// These styles apply to every route in the application
+import React from 'react'
 import '@/assets/styles/globals.css'
 
 import { Analytics } from '@vercel/analytics/next'

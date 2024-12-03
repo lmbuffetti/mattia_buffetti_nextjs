@@ -18,7 +18,7 @@ export default function Sidebar() {
       id="logo-sidebar"
       className={`z-40 h-screen w-64 ${
         isOpen ? '-translate-x-0' : '-translate-x-full'
-      } border-r border-gray-200 bg-white transition-transform sm:translate-x-0 dark:border-gray-700 dark:bg-gray-800`}
+      } border-r border-gray-200 bg-white transition-transform sm:translate-x-0 dark:border-gray-700 dark:bg-gray-800 hidden md:block`}
     >
       <div className="p-5">
         <Image

@@ -1,73 +1,37 @@
-import { getServerSession } from 'next-auth/next'
-
-import { UserClass } from '@/api/Models/Users'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import ParticleEffect from "@/components/ParticleEffect";
+import Script from "next/script";
+import'@/styles/Home.css'
 
 export default async function Home() {
-  const session: UserClass = await getServerSession(authOptions)
+
   return (
-    <section className="p-8">
-      <h1 className="text-xl">Dear {session?.name || 'Guest'},</h1>
-
-      <p className="mt-4 text-lg">
-        This is an example login/logout page made with NextJs (
-        <a
-          href="https://nextjs.org/"
-          target="_blank"
-          className="text-primary-400 hover:underline"
-          rel="noreferrer"
-        >
-          Official Page
-        </a>
-        ) and NextAuth (
-        <a
-          href="https://next-auth.js.org/"
-          className="text-primary-400 hover:underline"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Official Page
-        </a>
-        ), for the design was integrated Talwind (
-        <a
-          href="https://tailwindcss.com/"
-          className="text-primary-400 hover:underline"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Official Page
-        </a>
-        ) and for the database was used MongoBd (
-        <a
-          href="https://www.mongodb.com/"
-          className="text-primary-400 hover:underline"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Official Page
-        </a>
-        ){' '}
-      </p>
-
-      <p className="mt-4 text-lg">
-        The documention of API (visible only for logged users) is available{' '}
-        <a
-          href="/login"
-          className="text-primary-400 hover:underline"
-        >
-          here
-        </a>
-        , it was made using Swagger (
-        <a
-          href="https://swagger.io/"
-          target="_blank"
-          className="text-primary-400 hover:underline"
-          rel="noreferrer"
-        >
-          Official Page
-        </a>
-        )
-      </p>
+    <>
+    <Script strategy="beforeInteractive" src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" />
+    <Script strategy="beforeInteractive" src="https://threejs.org/examples/js/libs/stats.min.js" />
+    <section>
+      <ParticleEffect />
     </section>
+
+    <section id="section-home" className="section-home">
+        <div className="text-zone">
+            <h1>Hi, <br /> I&apos;m
+                Mattia, <br /> web developer
+            </h1>
+            <p className="gray-text">Front End Developer / Wordpress Expert</p>
+            <br />
+
+            <a href="#" className="contact-button">
+                <div>
+                    <span className="bg"></span>
+                    <span className="base"></span>
+                    <span className="text">
+                        Contact me!
+                    </span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    </>
   )
 }

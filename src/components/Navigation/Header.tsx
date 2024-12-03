@@ -4,11 +4,6 @@ import Link from 'next/link'
 import LogoWhite from '@/images/logo.png'
 
 type Header = {
-  loggedUser?: {
-    name?: string | null
-    email?: string | null
-    image?: string | null
-  }
   handleOpenSidebar: () => void
 }
 
