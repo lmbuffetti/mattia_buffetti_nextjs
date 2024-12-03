@@ -1,14 +1,9 @@
 'use client'
 
-import Particles from "@tsparticles/react";
 import { useEffect } from "react";
 import '@/styles/particles.css'
 
 export default function ParticleEffect() {
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-};
 
 useEffect(() => {
     /* ---- particles.js config ---- */
