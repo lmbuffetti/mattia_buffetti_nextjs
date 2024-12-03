@@ -8,7 +8,7 @@ export default function ParticleEffect() {
 useEffect(() => {
     /* ---- particles.js config ---- */
 //@ts-ignore
-if (particlesJS) {
+if (typeof particlesJS !== 'undefined') {
     //@ts-ignore
 particlesJS("particles-js", {
     "particles": {
