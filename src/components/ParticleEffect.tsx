@@ -121,7 +121,8 @@ particlesJS("particles-js", {
     "retina_detect": true
   });
 }
-}, [])
+//@ts-ignore
+}, [typeof particlesJS !== 'undefined'])
 
   return (
     <div id="particles-js"></div>
