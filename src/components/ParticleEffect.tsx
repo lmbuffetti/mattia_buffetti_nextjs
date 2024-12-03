@@ -8,6 +8,8 @@ export default function ParticleEffect() {
 useEffect(() => {
     /* ---- particles.js config ---- */
 //@ts-ignore
+if (particlesJS) {
+    //@ts-ignore
 particlesJS("particles-js", {
     "particles": {
       "number": {
@@ -118,6 +120,7 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
   });
+}
 }, [])
 
   return (
