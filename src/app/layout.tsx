@@ -1,10 +1,10 @@
-import React from 'react'
 import '@/assets/styles/globals.css'
 
 import { Analytics } from '@vercel/analytics/next'
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
+import React from 'react'
 
 import Sidebar from '@/components/Navigation/Sidebar'
 
@@ -32,7 +32,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
   return (
     <html lang="en">
       <body

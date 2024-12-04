@@ -5,9 +5,7 @@ import '@/styles/header.css'
 import Image from 'next/image'
 import { useState } from 'react'
 
-import {
-  sidebarNavigation,
-} from '@/components/Navigation/NavigationRoute'
+import { sidebarNavigation } from '@/components/Navigation/NavigationRoute'
 import logoWhite from '@/images/logoWhite.png'
 
 export default function Sidebar() {
@@ -18,7 +16,7 @@ export default function Sidebar() {
       id="logo-sidebar"
       className={`z-40 h-screen w-64 ${
         isOpen ? '-translate-x-0' : '-translate-x-full'
-      } border-r border-gray-200 bg-white transition-transform sm:translate-x-0 dark:border-gray-700 dark:bg-gray-800 hidden md:block`}
+      } hidden border-r border-gray-200 bg-white transition-transform sm:translate-x-0 md:block dark:border-gray-700 dark:bg-gray-800`}
     >
       <div className="p-5">
         <Image

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Permanent+Marker&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 *,
 ::before,
 ::after{
@@ -159,9 +161,18 @@ header{
 }
 .text-zone h1{
     font-size: 3rem;
-    line-height: 45px;
-    letter-spacing: -3px;
+    line-height: 1.2;
     position: relative;
+    font-family: "Parkinsans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+.text-zone h1 span {
+    text-shadow: -10px 10px 0px #07bccc,
+    -15px 15px 0px #e601c0,
+    -20px 20px 0px #e9019a,
+    -35px 35px 10px #482896;
 }
 .text-zone h1::before{
     content: '<h1>';
@@ -472,8 +483,6 @@ header{
     }
     .text-zone h1{
         font-size: 6.3rem;
-        line-height: 85px;
-        letter-spacing: -6px;
     }
     .text-zone img{
         width: 50px;

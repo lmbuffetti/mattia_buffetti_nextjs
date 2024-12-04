@@ -10,13 +10,13 @@ const prettier = {
 
 module.exports = {
   extends: [
-    'next/core-web-vitals',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@next/next/recommended',
     'plugin:tailwindcss/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'next',
+    'prettier',
   ],
   plugins: [
     '@typescript-eslint',
@@ -28,6 +28,7 @@ module.exports = {
     'formatjs',
   ],
   rules: {
+     "indent": ["error", 2],
     'tailwindcss/classnames-order': 'warn',
     'tailwindcss/no-custom-classname': 'off',
     'tailwindcss/no-arbitrary-value': 'off',

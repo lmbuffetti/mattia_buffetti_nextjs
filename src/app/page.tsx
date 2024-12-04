@@ -1,37 +1,46 @@
-import ParticleEffect from "@/components/ParticleEffect";
-import Script from "next/script";
-import'@/styles/Home.css'
+import '@/styles/Home.css'
+
+import Script from 'next/script'
+
+import ParticleEffect from '@/components/ParticleEffect'
 
 export default async function Home() {
-
   return (
     <>
-    <Script strategy="beforeInteractive" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" />
-    <Script strategy="beforeInteractive" src="https://threejs.org/examples/js/libs/stats.min.js" />
-    <section>
-      <ParticleEffect />
-    </section>
+      <Script
+        strategy="beforeInteractive"
+        src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
+      />
+      <section>
+        <ParticleEffect />
+      </section>
 
-    <section id="section-home" className="section-home">
+      <section
+        id="section-home"
+        className="section-home"
+      >
         <div className="text-zone">
-            <h1>Hi, <br /> I&apos;m
-                Mattia, <br /> web developer
-            </h1>
-            <p className="gray-text">Front End Developer / Wordpress Expert</p>
-            <br />
+          <h1>
+            Hi, <br /> I&apos;m
+            <span className="ml-8">M</span>attia, <br /> web developer
+          </h1>
+          <p className="gray-text">
+            Front End Developer / Wordpress Expert / Fullstack Developer
+          </p>
+          <br />
 
-            <a href="#" className="contact-button">
-                <div>
-                    <span className="bg"></span>
-                    <span className="base"></span>
-                    <span className="text">
-                        Contact me!
-                    </span>
-                </div>
-            </a>
+          <a
+            href="#"
+            className="contact-button"
+          >
+            <div>
+              <span className="bg" />
+              <span className="base" />
+              <span className="text">Contact me!</span>
+            </div>
+          </a>
         </div>
-    </section>
-
+      </section>
     </>
   )
 }
