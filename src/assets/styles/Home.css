@@ -174,26 +174,6 @@ header{
     -20px 20px 0px #e9019a,
     -35px 35px 10px #482896;
 }
-.text-zone h1::before{
-    content: '<h1>';
-    position: absolute;
-    top: -80px;
-    left: -10px;
-    font-size: 1.2rem;
-    font-family: 'La Belle Aurore', cursive;
-    color: #666565;
-    letter-spacing: 3px;
-}
-.text-zone h1::after{
-    content: '</h1>';
-    position: absolute;
-    bottom: -10px;
-    right: -70px;
-    font-size: 1.2rem;
-    font-family: 'La Belle Aurore', cursive;
-    color: #666565;
-    letter-spacing: 3px;
-}
 .text-zone img{
     width: 35px;
     height: 50px;
