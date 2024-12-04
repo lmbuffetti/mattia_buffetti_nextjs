@@ -25,7 +25,7 @@ export default function Sidebar() {
           alt="Logo"
         />
       </div>
-      <div className="overflow-y-auto bg-white px-3 pb-4 pt-2 dark:bg-gray-800">
+      <div className="overflow-y-auto px-3 pb-4 pt-2">
         <ul className="space-y-2 font-medium">
           {sidebarNavigation.map(({ label, icon, href }, index) => (
             <li key={index}>

@@ -20,12 +20,12 @@ const skillsList = [
 const SkillsEffect = () => {
   useEffect(() => {
     if (typeof TagCanvas !== 'undefined') {
-      TagCanvas.wheelZoom = false
+      TagCanvas.wheelZoom = true
       TagCanvas.textColour = 'white'
       TagCanvas.textHeight = 26
       TagCanvas.outlineMethod = 'size'
       TagCanvas.outlineIncrease = 10
-      TagCanvas.maxSpeed = 0.03
+      TagCanvas.maxSpeed = 0.01
       TagCanvas.minBrightness = 0.2
       TagCanvas.depth = 0.92
       TagCanvas.pulsateTo = 0.6
@@ -33,7 +33,7 @@ const SkillsEffect = () => {
       TagCanvas.decel = 0.98
       TagCanvas.reverse = true
       TagCanvas.hideTags = false
-      TagCanvas.shadow = false
+      TagCanvas.shadow = true
       TagCanvas.shadowBlur = 3
       TagCanvas.weight = false
       TagCanvas.imageScale = null

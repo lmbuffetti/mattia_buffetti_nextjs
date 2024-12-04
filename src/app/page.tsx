@@ -2,17 +2,13 @@ import '@/styles/Home.css'
 
 import Script from 'next/script'
 
-import ParticleEffect from '@/components/ParticleEffect'
+import ParticleEffect from '@/components/Particles/ParticleEffect'
 
 export default async function Home() {
   return (
     <>
-      <Script
-        strategy="beforeInteractive"
-        src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
-      />
       <section>
-        <ParticleEffect />
+        <ParticleEffect effect="triangle" />
       </section>
 
       <section

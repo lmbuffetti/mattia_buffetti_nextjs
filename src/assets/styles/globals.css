@@ -14,83 +14,24 @@ body {
   @apply bg-slate-200;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"] {
-  @apply block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-family: "Parkinsans", sans-serif;
+}
+body h1 {
+  font-size: 4rem;
+  font-weight: 900;
 }
 
-input.withSelect {
-  @apply block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500 rounded-none;
+body h1::first-letter {
+     text-shadow: -5px 5px 0px #07bccc,
+    -10px 10px 0px #e601c0,
+    -15px 15px 0px #e9019a,
+    -20px 20px 10px #482896;
 }
 
-body textarea {
-  @apply block p-4 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+body p {
+  margin-bottom: 1rem;
 }
-
-select,
-body .select {
-  @apply bg-gray-700 border-gray-600 rounded-lg overflow-hidden;
+body p:last-child {
+  margin-bottom: 0;
 }
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-body .selectInput {
-    @apply p-4 text-white;
-}
-
-body .groupHeadingSelect {
-  @apply py-4 text-white font-bold;
-}
-
-body .dropdownSelect {
-  @apply bg-gray-700 text-white;
-}
-
-body .optionSelect {
-  @apply bg-gray-700 text-white;
-}
-
-
-body .optionSelect.isFocused {
-  @apply bg-gray-300 text-gray-900;
-}
-
-
-body .optionSelect.isSelected {
-  @apply bg-gray-500 text-white;
-}
-
-body .singleValue {
-    @apply text-white;
-}
-
-table {
-  @apply w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400
-}
-
-table thead {
-  @apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400
-}
-
-table th {
-  @apply px-6 py-3
-}
-
-table tbody tr {
-  @apply bg-white border-b dark:bg-gray-800 dark:border-gray-700
-}
-
-table tbody th {
-  @apply px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white
-}
-
-table td {
-  @apply px-6 py-4
-}
-

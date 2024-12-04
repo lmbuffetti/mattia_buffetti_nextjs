@@ -7,14 +7,15 @@ import NextTopLoader from 'nextjs-toploader'
 import React from 'react'
 
 import Sidebar from '@/components/Navigation/Sidebar'
+import Script from 'next/script'
 
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
 })
 
-const title = 'NextJS Login'
-const description = 'NextJS Login'
+const title = 'Mattia Buufetti - Web Deceloper'
+const description = 'Mattia Buufetti - Web Deceloper & Full stack Developer'
 
 export const metadata: Metadata = {
   title,
@@ -34,6 +35,12 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+        strategy="beforeInteractive"
+        src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
+      />
+      </head>
       <body
         className={inter.variable}
         suppressHydrationWarning={true}
