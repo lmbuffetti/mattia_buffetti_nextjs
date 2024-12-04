@@ -1,7 +1,5 @@
 import '@/styles/Home.css'
 
-import Script from 'next/script'
-
 import ParticleEffect from '@/components/Particles/ParticleEffect'
 
 export default async function Home() {

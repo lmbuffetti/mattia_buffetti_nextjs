@@ -3,11 +3,11 @@ import '@/assets/styles/globals.css'
 import { Analytics } from '@vercel/analytics/next'
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import NextTopLoader from 'nextjs-toploader'
 import React from 'react'
 
 import Sidebar from '@/components/Navigation/Sidebar'
-import Script from 'next/script'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -37,9 +37,9 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         <Script
-        strategy="beforeInteractive"
-        src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
-      />
+          strategy="beforeInteractive"
+          src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
+        />
       </head>
       <body
         className={inter.variable}

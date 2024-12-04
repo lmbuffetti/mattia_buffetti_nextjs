@@ -1,6 +1,7 @@
 'use client'
 
 import '@/styles/particles.css'
+
 import ParticlesTrianlge from '@/components/Particles/PartclesTrianlge'
 import ParticlesStar from '@/components/Particles/ParticlesStar'
 
@@ -9,14 +10,16 @@ declare let particlesJS: any
 import { useEffect } from 'react'
 
 type ParticlesEffectType = {
-  effect: "star" | "triangle"
+  effect: 'star' | 'triangle'
 }
 
-export default function ParticleEffect({effect}) {
+export default function ParticleEffect({ effect }: ParticlesEffectType) {
   useEffect(() => {
     if (typeof particlesJS !== 'undefined') {
       let jsonEffect = ParticlesTrianlge
-      if (effect === 'star') jsonEffect = ParticlesStar
+      if (effect === 'star') {
+        jsonEffect = ParticlesStar
+      }
       particlesJS('particles-js', jsonEffect)
     }
   }, [typeof particlesJS !== 'undefined'])
