@@ -81,6 +81,7 @@ export default function Sidebar() {
               >
                 <a
                   target={href.includes('https') ? '_blank' : ''}
+                  rel="noreferrer"
                   onClick={() => setIsOpen(false)}
                   href={href}
                   className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
