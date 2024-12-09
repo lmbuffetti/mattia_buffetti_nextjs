@@ -1,6 +1,7 @@
 import '@/assets/styles/globals.css'
 
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
@@ -79,6 +80,7 @@ export default async function RootLayout({
           <div className="w-full">{children}</div>
         </div>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
