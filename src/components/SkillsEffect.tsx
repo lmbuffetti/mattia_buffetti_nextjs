@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect } from 'react'
 import Image from 'next/image'
+import { useEffect } from 'react'
 declare let TagCanvas: any
 
 const skillsList = [
@@ -21,7 +21,6 @@ const skillsList = [
 
 const SkillsEffect = () => {
   useEffect(() => {
-    console.log('eh', TagCanvas)
     if (typeof TagCanvas !== 'undefined') {
       TagCanvas.wheelZoom = false
       TagCanvas.textColour = 'white'
@@ -58,7 +57,7 @@ const SkillsEffect = () => {
 
   return (
     <div id="myCanvasContainer relative">
-        <div className='w-full h-full absolute left-0 top-0 z-10' />
+      <div className="absolute left-0 top-0 z-10 size-full" />
       <canvas
         width="500"
         height="500"
@@ -68,7 +67,12 @@ const SkillsEffect = () => {
           {skillsList.map((skill, index) => (
             <li key={`skill${index.toString()}`}>
               <a>
-                <Image src={`/images/logos/${skill}`} alt={skill} width={30} height={30} />
+                <Image
+                  src={`/images/logos/${skill}`}
+                  alt={skill}
+                  width={30}
+                  height={30}
+                />
               </a>
             </li>
           ))}

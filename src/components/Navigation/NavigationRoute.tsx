@@ -1,4 +1,4 @@
-import { HomeIcon, ComputerDesktopIcon } from '@heroicons/react/24/solid'
+import { ComputerDesktopIcon, HomeIcon } from '@heroicons/react/24/solid'
 
 export const sidebarNavigation = [
   {

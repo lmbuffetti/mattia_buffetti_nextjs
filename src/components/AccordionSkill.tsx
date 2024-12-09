@@ -75,7 +75,9 @@ const AccordionSkill = () => {
         </a>
         <div className="answer">
           <p>
-            I collaborate with different companies and I work with several desingers so during these years I used a lot of different designer tools, like Photoshop, Figma, Skecth, etc.
+            I collaborate with different companies and I work with several
+            desingers so during these years I used a lot of different designer
+            tools, like Photoshop, Figma, Skecth, etc.
           </p>
         </div>
         <hr />
@@ -103,11 +105,20 @@ const AccordionSkill = () => {
         </a>
         <div className="answer">
           <p>
-            I’m using Javascript since the beginning of my career as developer, but from 2018 I’m focus on library/framework (React/Node especially) and then I start using Typescript
-            I studied in 2016 and I created some personal project and then I officially use with Octopus and Brixel. 
-            I had experience with NextJS.
+            I’m using Javascript since the beginning of my career as developer,
+            but from 2018 I’m focus on library/framework (React/Node especially)
+            and then I start using Typescript I studied in 2016 and I created
+            some personal project and then I officially use with Octopus and
+            Brixel. I had experience with NextJS.
           </p>
-          <a href="https://github.com/lmbuffetti/nextjs-login" target='_blank' className='block mb-8'>Example Project</a>
+          <a
+            href="https://github.com/lmbuffetti/nextjs-login"
+            target="_blank"
+            className="mb-8 block"
+            rel="noreferrer"
+          >
+            Example Project
+          </a>
         </div>
         <hr />
       </div>
@@ -133,9 +144,18 @@ const AccordionSkill = () => {
         </a>
         <div className="answer">
           <p>
-            I studied Node and Mongo for my personal project, before on backend side I ever used PHP and MySql, and when I join to Brixel I started to applied to real project.
+            I studied Node and Mongo for my personal project, before on backend
+            side I ever used PHP and MySql, and when I join to Brixel I started
+            to applied to real project.
           </p>
-          <a href="https://github.com/lmbuffetti/nextjs-login" target='_blank' className='block mb-8'>Example Project</a>
+          <a
+            href="https://github.com/lmbuffetti/nextjs-login"
+            target="_blank"
+            className="mb-8 block"
+            rel="noreferrer"
+          >
+            Example Project
+          </a>
         </div>
         <hr />
       </div>
@@ -161,9 +181,10 @@ const AccordionSkill = () => {
         </a>
         <div className="answer">
           <p>
-            I have experience with Github, Gitlab and Bitbucket and I used the first time in 2015 when I
-was working with Latte Creative and then I start using it with almost my project. I have
-experience even with CI and open source automation server like Jenkins or Travis.
+            I have experience with Github, Gitlab and Bitbucket and I used the
+            first time in 2015 when I was working with Latte Creative and then I
+            start using it with almost my project. I have experience even with
+            CI and open source automation server like Jenkins or Travis.
           </p>
         </div>
         <hr />
