@@ -36,13 +36,17 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
         <Script
           strategy="beforeInteractive"
           src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
         />
       </head>
       <body
-        className={inter.variable}
+        className={`${inter.variable} overflow-x-hidden-hidden w-full`}
         suppressHydrationWarning={true}
       >
         <NextTopLoader />

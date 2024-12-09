@@ -62,6 +62,7 @@ const SkillsEffect = () => {
         width="500"
         height="500"
         id="myCanvas"
+        style={{ maxWidth: '100%' }}
       >
         <ul id="tags">
           {skillsList.map((skill, index) => (
