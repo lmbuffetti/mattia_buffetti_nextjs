@@ -5,11 +5,11 @@ const AccordionSkill = () => {
     <div className="accordion">
       <div
         className="accordion-item"
-        id="question1"
+        id="biography"
       >
         <a
           className="accordion-link"
-          href="#question1"
+          href="#biography"
         >
           <div className="flex">
             <h3>BIOGRAPHY</h3>
@@ -55,11 +55,11 @@ const AccordionSkill = () => {
       </div>
       <div
         className="accordion-item"
-        id="question2"
+        id="ui-ux-design"
       >
         <a
           className="accordion-link"
-          href="#question2"
+          href="#ui-ux-design"
         >
           <div className="flex">
             <h3>UX/UI DESIGN</h3>
@@ -68,7 +68,6 @@ const AccordionSkill = () => {
               <li>#Sketch</li>
               <li>#Adobe</li>
               <li>#Invision</li>
-              <li>#Protopie</li>
             </ul>
           </div>
           <i className="icon ion-md-arrow-forward" />
@@ -76,31 +75,27 @@ const AccordionSkill = () => {
         </a>
         <div className="answer">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum.
+            I collaborate with different companies and I work with several desingers so during these years I used a lot of different designer tools, like Photoshop, Figma, Skecth, etc.
           </p>
         </div>
         <hr />
       </div>
       <div
         className="accordion-item"
-        id="question3"
+        id="frontend"
       >
         <a
           className="accordion-link"
-          href="#question3"
+          href="#frontend"
         >
           <div className="flex">
             <h3>FRONTEND DEVELOPMENT</h3>
             <ul>
-              <li>#Figma</li>
-              <li>#Sketch</li>
-              <li>#Adobe</li>
-              <li>#Invision</li>
-              <li>#Protopie</li>
+              <li>#HTML</li>
+              <li>#CSS</li>
+              <li>#React</li>
+              <li>#NextJS</li>
+              <li>#Talwind</li>
             </ul>
           </div>
           <i className="icon ion-md-arrow-forward" />
@@ -108,31 +103,29 @@ const AccordionSkill = () => {
         </a>
         <div className="answer">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum.
+            I’m using Javascript since the beginning of my career as developer, but from 2018 I’m focus on library/framework (React/Node especially) and then I start using Typescript
+            I studied in 2016 and I created some personal project and then I officially use with Octopus and Brixel. 
+            I had experience with NextJS.
           </p>
+          <a href="https://github.com/lmbuffetti/nextjs-login" target='_blank' className='block mb-8'>Example Project</a>
         </div>
         <hr />
       </div>
       <div
         className="accordion-item"
-        id="question4"
+        id="backend"
       >
         <a
           className="accordion-link"
-          href="#question4"
+          href="#backend"
         >
           <div>
             <h3>BACKEND DEVELOPMENT</h3>
             <ul>
-              <li>#Figma</li>
-              <li>#Sketch</li>
-              <li>#Adobe</li>
-              <li>#Invision</li>
-              <li>#Protopie</li>
+              <li>#PHP</li>
+              <li>#MySql</li>
+              <li>#Node</li>
+              <li>#MongoDB</li>
             </ul>
           </div>
           <i className="icon ion-md-arrow-forward" />
@@ -140,11 +133,37 @@ const AccordionSkill = () => {
         </a>
         <div className="answer">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum.
+            I studied Node and Mongo for my personal project, before on backend side I ever used PHP and MySql, and when I join to Brixel I started to applied to real project.
+          </p>
+          <a href="https://github.com/lmbuffetti/nextjs-login" target='_blank' className='block mb-8'>Example Project</a>
+        </div>
+        <hr />
+      </div>
+      <div
+        className="accordion-item"
+        id="ci-cd"
+      >
+        <a
+          className="accordion-link"
+          href="#ci-cd"
+        >
+          <div>
+            <h3>CI/CD</h3>
+            <ul>
+              <li>#Git</li>
+              <li>#Github</li>
+              <li>#Gitlab</li>
+              <li>#Travis</li>
+            </ul>
+          </div>
+          <i className="icon ion-md-arrow-forward" />
+          <i className="icon ion-md-arrow-down" />
+        </a>
+        <div className="answer">
+          <p>
+            I have experience with Github, Gitlab and Bitbucket and I used the first time in 2015 when I
+was working with Latte Creative and then I start using it with almost my project. I have
+experience even with CI and open source automation server like Jenkins or Travis.
           </p>
         </div>
         <hr />

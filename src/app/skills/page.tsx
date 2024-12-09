@@ -18,15 +18,19 @@ export default async function AccordionPage() {
       </section>
       <section
         id="section-skills"
-        className="section-skills relative z-10 flex px-16"
+        className="section-skills relative z-10 px-16 flex flex-col items-center h-full justify-center"
       >
-        <article className="pr-8">
-          <h1>About me</h1>
+        <div className='flex items-center'>
+          <article className="pr-8 w-4/6">
+            <h1 className='mb-16'>About me</h1>
 
-          <AccordionSkill />
-        </article>
+            <AccordionSkill />
+          </article>
 
-        <SkillsEffect />
+          <div className='w-2/6 relative'>
+            <SkillsEffect />
+          </div>
+        </div>
       </section>
     </>
   )

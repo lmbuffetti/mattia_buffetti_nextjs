@@ -1,26 +1,29 @@
 'use client'
 
 import { useEffect } from 'react'
+import Image from 'next/image'
 declare let TagCanvas: any
 
 const skillsList = [
-  'HTML',
-  'CSS',
-  'React',
-  'NextJs',
-  'PHP',
-  'MySql',
-  'Node',
-  'MongoDb',
-  'Docker',
-  'Javascript',
-  'Git',
+  'css.png',
+  'docker.png',
+  'figma.png',
+  'git.png',
+  'html5.png',
+  'javascript.png',
+  'mongo.png',
+  'nextjs.png',
+  'node.png',
+  'react.png',
+  'talwind.png',
+  'typescript.png',
 ]
 
 const SkillsEffect = () => {
   useEffect(() => {
+    console.log('eh', TagCanvas)
     if (typeof TagCanvas !== 'undefined') {
-      TagCanvas.wheelZoom = true
+      TagCanvas.wheelZoom = false
       TagCanvas.textColour = 'white'
       TagCanvas.textHeight = 26
       TagCanvas.outlineMethod = 'size'
@@ -41,6 +44,8 @@ const SkillsEffect = () => {
       TagCanvas.clickToFront = 600
       TagCanvas.width = window.innerWidth
       TagCanvas.height = window.innerHeight
+      TagCanvas.keep = false
+      TagCanvas.initSpeed = 'fast'
 
       try {
         TagCanvas.Start('myCanvas', 'tags')
@@ -52,7 +57,8 @@ const SkillsEffect = () => {
   }, [typeof TagCanvas !== 'undefined'])
 
   return (
-    <div id="myCanvasContainer">
+    <div id="myCanvasContainer relative">
+        <div className='w-full h-full absolute left-0 top-0 z-10' />
       <canvas
         width="500"
         height="500"
@@ -61,11 +67,8 @@ const SkillsEffect = () => {
         <ul id="tags">
           {skillsList.map((skill, index) => (
             <li key={`skill${index.toString()}`}>
-              <a
-                href="#"
-                target="_blank"
-              >
-                {skill}
+              <a>
+                <Image src={`/images/logos/${skill}`} alt={skill} width={30} height={30} />
               </a>
             </li>
           ))}

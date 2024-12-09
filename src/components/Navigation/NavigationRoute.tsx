@@ -1,4 +1,4 @@
-import { HomeIcon } from '@heroicons/react/24/solid'
+import { HomeIcon, ComputerDesktopIcon } from '@heroicons/react/24/solid'
 
 export const sidebarNavigation = [
   {
@@ -8,7 +8,7 @@ export const sidebarNavigation = [
   },
   {
     label: 'Skills',
-    icon: <HomeIcon className="w-6" />,
+    icon: <ComputerDesktopIcon className="w-6" />,
     href: `/skills`,
   },
 ]
