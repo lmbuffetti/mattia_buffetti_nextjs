@@ -2,8 +2,6 @@
 
 import '@/styles/components/header.css'
 
-import { useState } from 'react'
-
 import Sidebar from '@/components/Navigation/Sidebar'
 
 export default function Navigation() {
