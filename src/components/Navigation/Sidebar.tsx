@@ -7,7 +7,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
-import { sidebarNavigation } from '@/components/Navigation/NavigationRoute'
+import {
+  contactNavigation,
+  sidebarNavigation,
+} from '@/components/Navigation/NavigationRoute'
 import logoWhite from '@/images/logoWhite.png'
 
 export default function Sidebar() {
@@ -19,7 +22,7 @@ export default function Sidebar() {
   }, [pathname])
   return (
     <>
-      <div className="relative">
+      <div className="relative block md:hidden">
         <input
           id="menu__toggle"
           type="checkbox"
@@ -52,7 +55,7 @@ export default function Sidebar() {
             />
           </Link>
         </div>
-        <div className="overflow-y-auto px-3 pb-4 pt-2">
+        <div className="mt-16 overflow-y-auto px-3 pb-4 pt-2">
           <ul className="space-y-2 font-medium">
             {sidebarNavigation.map(({ label, icon, href }, index) => (
               <li key={index}>
@@ -63,6 +66,25 @@ export default function Sidebar() {
                 >
                   {icon}
                   <span className="ml-3">{label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-16 overflow-y-auto px-3 pb-4 pt-2">
+          <ul className="flex font-medium">
+            {contactNavigation.map(({ icon, href }, index) => (
+              <li
+                key={index}
+                className="mx-1"
+              >
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  href={href}
+                  className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >
+                  {icon}
                 </Link>
               </li>
             ))}

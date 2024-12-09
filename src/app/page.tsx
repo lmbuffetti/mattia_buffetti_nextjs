@@ -24,7 +24,7 @@ export default async function Home() {
           <br />
 
           <a
-            href="#"
+            href="mailto:mattia.buffetti@gmail.com"
             className="contact-button"
           >
             <div>
