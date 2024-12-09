@@ -2,6 +2,7 @@ import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import {
   faComputer,
   faEnvelope,
+  faFilePdf,
   faHome,
   faPhone,
 } from '@fortawesome/free-solid-svg-icons'
@@ -70,5 +71,15 @@ export const contactNavigation = [
       />
     ),
     href: `https://www.linkedin.com/in/mattiabuffetti/`,
+  },
+  {
+    label: '',
+    icon: (
+      <FontAwesomeIcon
+        icon={faFilePdf}
+        className="fa-fw"
+      />
+    ),
+    href: `https://mattiabuffetti.org/Curriculum_Luigi_Mattia_Buffetti.pdf`,
   },
 ]

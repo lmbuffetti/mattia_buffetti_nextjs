@@ -79,13 +79,14 @@ export default function Sidebar() {
                 key={index}
                 className="mx-1"
               >
-                <Link
+                <a
+                  target={href.includes('https') ? '_blank' : ''}
                   onClick={() => setIsOpen(false)}
                   href={href}
                   className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
                   {icon}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
