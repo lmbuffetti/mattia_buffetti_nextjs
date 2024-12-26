@@ -79,8 +79,6 @@ const SkillsEffect = () => {
           ))}
         </ul>
       </canvas>
-
-  <div>test</div>
     </div>
   )
 }
