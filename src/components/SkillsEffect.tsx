@@ -20,6 +20,7 @@ const skillsList = [
 ]
 
 const SkillsEffect = () => {
+  const testadicazzo = ''
   useEffect(() => {
     if (typeof TagCanvas !== 'undefined') {
       TagCanvas.wheelZoom = false
@@ -79,6 +80,8 @@ const SkillsEffect = () => {
           ))}
         </ul>
       </canvas>
+
+  <div>test</div>
     </div>
   )
 }
