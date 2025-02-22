@@ -25,7 +25,7 @@ module.exports = {
     "@tailwindcss/postcss",
   ],
   safelist: [
-    "bg-slate-200",
+    "space-y-2",
     
   ],
 }

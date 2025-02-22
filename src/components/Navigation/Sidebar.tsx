@@ -56,7 +56,7 @@ export default function Sidebar() {
           </Link>
         </div>
         <div className="mt-16 overflow-y-auto px-3 pb-4 pt-2">
-          <ul className="space-y-2 font-medium">
+          <ul className="mt-2 mb-2 space-y-2 font-medium">
             {sidebarNavigation.map(({ label, icon, href }, index) => (
               <li key={index}>
                 <Link
