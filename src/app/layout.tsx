@@ -15,8 +15,8 @@ const inter = Inter({
   subsets: ['latin'],
 })
 
-const title = 'Mattia Buufetti - Web Deceloper'
-const description = 'Mattia Buufetti - Web Deceloper & Full stack Developer'
+const title = 'Mattia Buffetti - Web Developer'
+const description = 'Mattia Buffetti - Web Developer & Full stack Developer'
 
 export const metadata: Metadata = {
   title,

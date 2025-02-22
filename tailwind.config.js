@@ -1,3 +1,5 @@
+import tailwindcss from '@tailwindcss/vite'
+
 module.exports = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx}',
@@ -18,5 +20,12 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    tailwindcss(),
+    "@tailwindcss/postcss",
+  ],
+  safelist: [
+    "bg-slate-200",
+    
+  ],
 }
