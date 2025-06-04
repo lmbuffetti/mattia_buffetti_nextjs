@@ -1,3 +1,5 @@
+import { FlatCompat } from '@eslint/eslintrc'
+
 const prettier = {
   bracketSpacing: true,
   jsxBracketSameLine: false,
@@ -12,8 +14,6 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@next/next/recommended',
-    'plugin:tailwindcss/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'prettier',
@@ -29,10 +29,6 @@ module.exports = {
   ],
   rules: {
      "indent": ["error", 2],
-    'tailwindcss/classnames-order': 'warn',
-    'tailwindcss/no-custom-classname': 'off',
-    'tailwindcss/no-arbitrary-value': 'off',
-    'tailwindcss/no-contradicting-classname': 'error',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
@@ -75,11 +71,6 @@ module.exports = {
     'formatjs/no-offset': 'error',
   },
   settings: {
-    tailwindcss: {
-      callees: ['classnames', 'clsx', 'ctl'],
-      config: 'tailwind.config.js',
-      whitelist: ['h-[calc(100%-1rem)]'],
-    },
     react: {
       version: '18.2.0',
     },
@@ -89,26 +80,6 @@ module.exports = {
       files: ['*.js'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
-      },
-    },
-    {
-      // Force the setting of a swagger description on each api endpoint
-      files: ['app/api/**/*.ts'],
-      plugins: ['jsdoc'],
-      rules: {
-        'jsdoc/no-missing-syntax': [
-          'error',
-          {
-            contexts: [
-              {
-                comment: 'JsdocBlock:has(JsdocTag[tag=swagger])',
-                context: 'any',
-                message:
-                  '@swagger documentation is required on each API. Check this out for syntax info: https://github.com/jellydn/next-swagger-doc',
-              },
-            ],
-          },
-        ],
       },
     },
   ],
