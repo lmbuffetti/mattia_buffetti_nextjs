@@ -21,6 +21,7 @@ const skillsList = [
 
 const SkillsEffect = () => {
   useEffect(() => {
+    console.log(TagCanvas)
     if (typeof TagCanvas !== 'undefined') {
       TagCanvas.wheelZoom = false
       TagCanvas.textColour = 'white'

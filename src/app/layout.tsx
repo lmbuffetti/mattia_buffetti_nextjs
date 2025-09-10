@@ -37,6 +37,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script
+                strategy="beforeInteractive"
+                src="https://www.goat1000.com/tagcanvas.js"
+                defer
+              />
         <link
           rel="icon"
           type="image/png"

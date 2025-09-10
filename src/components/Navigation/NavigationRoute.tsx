@@ -6,6 +6,7 @@ import {
   faHome,
   faPhone,
 } from '@fortawesome/free-solid-svg-icons'
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const sidebarNavigation = [
@@ -13,7 +14,7 @@ export const sidebarNavigation = [
     label: 'Home',
     icon: (
       <FontAwesomeIcon
-        icon={faHome}
+        icon={faHome as IconProp}
         className="fa-fw"
       />
     ),
@@ -23,7 +24,7 @@ export const sidebarNavigation = [
     label: 'Skills',
     icon: (
       <FontAwesomeIcon
-        icon={faComputer}
+        icon={faComputer as IconProp}
         className="fa-fw"
       />
     ),
@@ -36,7 +37,7 @@ export const contactNavigation = [
     label: '',
     icon: (
       <FontAwesomeIcon
-        icon={faGithub}
+        icon={faGithub as IconProp}
         className="fa-fw"
       />
     ),
@@ -46,7 +47,7 @@ export const contactNavigation = [
     label: '',
     icon: (
       <FontAwesomeIcon
-        icon={faPhone}
+        icon={faPhone as IconProp}
         className="fa-fw"
       />
     ),
@@ -56,7 +57,7 @@ export const contactNavigation = [
     label: '',
     icon: (
       <FontAwesomeIcon
-        icon={faEnvelope}
+        icon={faEnvelope as IconProp}
         className="fa-fw"
       />
     ),
@@ -66,7 +67,7 @@ export const contactNavigation = [
     label: '',
     icon: (
       <FontAwesomeIcon
-        icon={faLinkedinIn}
+        icon={faLinkedinIn as IconProp}
         className="fa-fw"
       />
     ),
@@ -76,7 +77,7 @@ export const contactNavigation = [
     label: '',
     icon: (
       <FontAwesomeIcon
-        icon={faFilePdf}
+        icon={faFilePdf as IconProp}
         className="fa-fw"
       />
     ),
