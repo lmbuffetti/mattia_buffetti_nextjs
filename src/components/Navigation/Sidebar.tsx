@@ -41,7 +41,7 @@ export default function Sidebar() {
         data-testid={isOpen ? 'logo-sidebar-open' : 'logo-sidebar-closed'}
         id="logo-sidebar"
         className={`z-40 h-screen w-64 ${
-          isOpen ? 'left-0 w-full -translate-x-0' : '-translate-x-full'
+          isOpen ? 'left-0 w-full translate-x-0' : '-translate-x-full'
         } fixed h-full border-r border-gray-200 bg-white transition-transform sm:translate-x-0 md:relative md:block dark:border-gray-700 dark:bg-gray-800`}
       >
         <div className="p-5 pt-16 md:pt-5">
@@ -58,7 +58,7 @@ export default function Sidebar() {
         </div>
         <div className="mt-16 overflow-y-auto px-3 pb-4 pt-2">
           <ul className="mt-2 mb-2 space-y-2 font-medium">
-            {sidebarNavigation.map(({ id, label, icon, href }, index) => (
+            {sidebarNavigation.map(({ id, label, icon, href }) => (
               <li key={id}>
                 <Link
                   onClick={() => setIsOpen(false)}
@@ -75,7 +75,7 @@ export default function Sidebar() {
 
         <div className="mt-16 overflow-y-auto px-3 pb-4 pt-2">
           <ul className="flex font-medium">
-            {contactNavigation.map(({ id, icon, href, label }, index) => (
+            {contactNavigation.map(({ id, icon, href, label }) => (
               <li
                 key={id}
                 className="mx-1"
