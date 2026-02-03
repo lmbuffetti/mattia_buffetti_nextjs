@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export const sidebarNavigation = [
   {
     label: 'Home',
+    id: 'home',
     icon: (
       <FontAwesomeIcon
         icon={faHome as IconProp}
@@ -22,6 +23,7 @@ export const sidebarNavigation = [
   },
   {
     label: 'Skills',
+    id: 'skills',
     icon: (
       <FontAwesomeIcon
         icon={faComputer as IconProp}
@@ -34,7 +36,8 @@ export const sidebarNavigation = [
 
 export const contactNavigation = [
   {
-    label: '',
+    label: 'GitHub profile',
+    id: 'github',
     icon: (
       <FontAwesomeIcon
         icon={faGithub as IconProp}
@@ -44,7 +47,8 @@ export const contactNavigation = [
     href: `https://github.com/lmbuffetti`,
   },
   {
-    label: '',
+    label: 'Call Mattia',
+    id: 'phone',
     icon: (
       <FontAwesomeIcon
         icon={faPhone as IconProp}
@@ -54,7 +58,8 @@ export const contactNavigation = [
     href: `tel:+393286930881`,
   },
   {
-    label: '',
+    label: 'Email Mattia',
+    id: 'email',
     icon: (
       <FontAwesomeIcon
         icon={faEnvelope as IconProp}
@@ -64,7 +69,8 @@ export const contactNavigation = [
     href: `mailto:mattia.buffetti@gmail.com`,
   },
   {
-    label: '',
+    label: 'LinkedIn profile',
+    id: 'linkedin',
     icon: (
       <FontAwesomeIcon
         icon={faLinkedinIn as IconProp}
@@ -74,7 +80,8 @@ export const contactNavigation = [
     href: `https://www.linkedin.com/in/mattiabuffetti/`,
   },
   {
-    label: '',
+    label: 'Download CV',
+    id: 'cv',
     icon: (
       <FontAwesomeIcon
         icon={faFilePdf as IconProp}

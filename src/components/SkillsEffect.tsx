@@ -136,24 +136,28 @@ const SkillsEffect = () => {
         aria-hidden="true"
         style={hiddenTagStyles}
       >
-        {skillsList.map((skill) => (
-          <li key={skill}>
-            <a
-              href={`#${CANVAS_ID}`}
-              aria-label={skill.replace('.png', '')}
-            >
-              <img
-                src={`/images/logos/${skill}`}
-                alt={skill.replace('.png', '')}
-                width={LOGO_SIZE}
-                height={LOGO_SIZE}
-                loading="eager"
-                decoding="async"
-                style={{ display: 'block', objectFit: 'contain' }}
-              />
-            </a>
-          </li>
-        ))}
+        {skillsList.map((skill) => {
+          const skillLabel = skill.replace('.png', '')
+          return (
+            <li key={skill}>
+              <a
+                href={`#${CANVAS_ID}`}
+                aria-label={skillLabel}
+              >
+                <span className="sr-only">{skillLabel}</span>
+                <img
+                  src={`/images/logos/${skill}`}
+                  alt={skillLabel}
+                  width={LOGO_SIZE}
+                  height={LOGO_SIZE}
+                  loading="eager"
+                  decoding="async"
+                  style={{ display: 'block', objectFit: 'contain' }}
+                />
+              </a>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )

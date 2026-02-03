@@ -33,7 +33,8 @@ export default function Sidebar() {
           className="menu__btn"
           htmlFor="menu__toggle"
         >
-          <span />
+`          <span className="sr-only">Toggle navigation menu</span>
+          <span aria-hidden="true" />
         </label>
       </div>
       <aside
@@ -57,8 +58,8 @@ export default function Sidebar() {
         </div>
         <div className="mt-16 overflow-y-auto px-3 pb-4 pt-2">
           <ul className="mt-2 mb-2 space-y-2 font-medium">
-            {sidebarNavigation.map(({ label, icon, href }, index) => (
-              <li key={index}>
+            {sidebarNavigation.map(({ id, label, icon, href }, index) => (
+              <li key={id}>
                 <Link
                   onClick={() => setIsOpen(false)}
                   href={href}
@@ -74,9 +75,9 @@ export default function Sidebar() {
 
         <div className="mt-16 overflow-y-auto px-3 pb-4 pt-2">
           <ul className="flex font-medium">
-            {contactNavigation.map(({ icon, href }, index) => (
+            {contactNavigation.map(({ id, icon, href, label }, index) => (
               <li
-                key={index}
+                key={id}
                 className="mx-1"
               >
                 <a
@@ -84,8 +85,10 @@ export default function Sidebar() {
                   rel="noreferrer"
                   onClick={() => setIsOpen(false)}
                   href={href}
+                  aria-label={label}
                   className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
+                  <span className="sr-only">{label}</span>
                   {icon}
                 </a>
               </li>
