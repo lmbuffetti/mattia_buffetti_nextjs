@@ -126,7 +126,7 @@ export default async function RootLayout({
         />
         <Script
           strategy="beforeInteractive"
-          src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
+          src="/vendor/particles.min.js"
         />
         <meta
            name="theme-color"

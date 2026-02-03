@@ -123,7 +123,7 @@ const SkillsEffect = () => {
 
   return (
     <div className="relative" id="myCanvasContainer">
-      <div className="absolute left-0 top-0 z-10 size-full" />
+      <div className="absolute left-0 top-0 z-10 size-full" id="canvasImg" />
       <canvas
         width={500}
         height={500}
@@ -139,7 +139,7 @@ const SkillsEffect = () => {
         {skillsList.map((skill) => (
           <li key={skill}>
             <a
-              href="#test"
+              href="#canvasImg"
               aria-label={skill.replace('.png', '')}
             >
               <img
