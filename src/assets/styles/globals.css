@@ -8,8 +8,10 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@utility bgSlate {
-  @apply bg-slate-200;
+@layer utilities {
+  .bgSlate {
+    @apply bg-slate-200;
+  }
 }
 
 body {
@@ -25,9 +27,9 @@ body h1 {
 }
 
 body h1::first-letter {
-     text-shadow: -5px 5px 0px #07bccc,
-    -10px 10px 0px #e601c0,
-    -15px 15px 0px #e9019a,
+     text-shadow: -5px 5px 0 #07bccc,
+    -10px 10px 0 #e601c0,
+    -15px 15px 0 #e9019a,
     -20px 20px 10px #482896;
 }
 
@@ -36,4 +38,8 @@ body p {
 }
 body p:last-child {
   margin-bottom: 0;
+}
+
+canvas {
+    margin: auto;
 }

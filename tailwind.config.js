@@ -1,4 +1,3 @@
-import tailwindcss from '@tailwindcss/vite'
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
@@ -21,10 +20,7 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    tailwindcss(),
-    "@tailwindcss/postcss",
-  ],
+  plugins: [],
   safelist: [
     "space-y-2",
     

@@ -9,39 +9,93 @@ import NextTopLoader from 'nextjs-toploader'
 import React from 'react'
 
 import Sidebar from '@/components/Navigation/Sidebar'
+import { CONTACT_EMAIL, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/url'
 
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
 })
 
-const title = 'Mattia Buffetti - Web Developer'
-const description = 'Mattia Buffetti - Web Developer & Full stack Developer'
+const socialImage = `${SITE_URL}/images/logos/react.png`
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Mattia Buffetti',
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  email: `mailto:${CONTACT_EMAIL}`,
+  jobTitle: 'Full-stack Web Developer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Mattia Buffetti',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'IT',
+  },
+}
 
 export const metadata: Metadata = {
-  title,
-  description,
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_NAME,
+    template: '%s | Mattia Buffetti',
+  },
+  description: SITE_DESCRIPTION,
+  keywords: [
+    'Mattia Buffetti',
+    'web developer',
+    'frontend developer',
+    'full stack developer',
+    'Next.js portfolio',
+  ],
+  category: 'technology',
+  authors: [{ name: 'Mattia Buffetti', url: SITE_URL }],
+  creator: 'Mattia Buffetti',
+  publisher: 'Mattia Buffetti',
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: socialImage, width: 1200, height: 630, alt: SITE_NAME }],
+  },
   twitter: {
     card: 'summary_large_image',
-    title,
-    description,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: [socialImage],
   },
-  metadataBase: new URL('https://nextjs-postgres-auth.vercel.app'),
+  icons: {
+    icon: [
+      { url: '/icons/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/icons/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icons/favicon.ico', rel: 'shortcut icon' },
+    ],
+    apple: [{ url: '/icons/apple-touch-icon.png', sizes: '180x180' }],
+  },
+  manifest: '/icons/site.webmanifest',
 }
 
 export default async function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
     <html lang="en">
       <head>
+        <title>{SITE_NAME}</title>
         <Script
-                strategy="beforeInteractive"
-                src="https://www.goat1000.com/tagcanvas.js"
-                defer
-              />
+          strategy="beforeInteractive"
+          src="/vendor/tagcanvas.min.js"
+          defer
+        />
         <link
           rel="icon"
           type="image/png"
@@ -74,6 +128,20 @@ export default async function RootLayout({
           strategy="beforeInteractive"
           src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
         />
+        <meta
+           name="theme-color"
+           content="#0f172a"
+         />
+         <link
+           rel="canonical"
+           href={SITE_URL}
+         />
+         <Script
+           id="ld-json"
+           type="application/ld+json"
+           strategy="afterInteractive"
+           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+         />
       </head>
       <body
         className={`${inter.variable} overflow-x-hidden-hidden w-full`}

@@ -1,9 +1,11 @@
 'use client'
 
-import Image from 'next/image'
-import { useEffect } from 'react'
+import { type CSSProperties, useEffect } from 'react'
+
 declare let TagCanvas: any
 
+const CANVAS_ID = 'skillsCanvas'
+const TAG_LIST_ID = 'skillsTags'
 const skillsList = [
   'css.png',
   'docker.png',
@@ -19,67 +21,140 @@ const skillsList = [
   'typescript.png',
 ]
 
+const LOGO_SIZE = 80
+
+const hiddenTagStyles: CSSProperties = {
+  position: 'absolute',
+  width: LOGO_SIZE,
+  height: LOGO_SIZE,
+  overflow: 'hidden',
+  opacity: 1,
+  pointerEvents: 'none',
+  clip: 'rect(0 0 0 0)',
+  clipPath: 'inset(50%)',
+  whiteSpace: 'nowrap',
+}
+
 const SkillsEffect = () => {
   useEffect(() => {
-    console.log(TagCanvas)
-    if (typeof TagCanvas !== 'undefined') {
-      TagCanvas.wheelZoom = false
-      TagCanvas.textColour = 'white'
-      TagCanvas.textHeight = 26
-      TagCanvas.outlineMethod = 'size'
-      TagCanvas.outlineIncrease = 10
-      TagCanvas.maxSpeed = 0.01
-      TagCanvas.minBrightness = 0.2
-      TagCanvas.depth = 0.92
-      TagCanvas.pulsateTo = 0.6
-      TagCanvas.initial = [0.1, -0.1]
-      TagCanvas.decel = 0.98
-      TagCanvas.reverse = true
-      TagCanvas.hideTags = false
-      TagCanvas.shadow = true
-      TagCanvas.shadowBlur = 3
-      TagCanvas.weight = false
-      TagCanvas.imageScale = null
-      TagCanvas.fadeIn = 1000
-      TagCanvas.clickToFront = 600
-      TagCanvas.width = window.innerWidth
-      TagCanvas.height = window.innerHeight
-      TagCanvas.keep = false
-      TagCanvas.initSpeed = 'fast'
+    let startTimer: ReturnType<typeof setInterval> | null = null
+    let started = false
+
+    const imagesReady = () => {
+      if (!('document' in globalThis)) return false
+      const images = Array.from(
+        (globalThis.document).querySelectorAll<HTMLImageElement>(`#${TAG_LIST_ID} img`),
+      )
+      if (!images.length) {
+        return false
+      }
+      return images.every((img) => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0)
+    }
+
+    const startTagCanvas = () => {
+      if (started) return started
+      if (!imagesReady()) return false
+      const instance = ('TagCanvas' in globalThis
+        ? (globalThis as typeof globalThis & { TagCanvas?: typeof TagCanvas }).TagCanvas
+        : TagCanvas)
+      if (!instance) return false
+
+      const options = {
+        wheelZoom: false,
+        textColour: 'white',
+        textHeight: 26,
+        outlineMethod: 'size',
+        outlineIncrease: 10,
+        maxSpeed: 0.01,
+        minBrightness: 0.2,
+        depth: 0.92,
+        pulsateTo: 0.6,
+        initial: [0.1, -0.1],
+        decel: 0.98,
+        reverse: true,
+        hideTags: false,
+        shadow: true,
+        shadowBlur: 3,
+        weight: false,
+        imageScale: LOGO_SIZE / 100,
+        imagePadding: 12,
+        fadeIn: 1000,
+        clickToFront: 600,
+        keep: false,
+        imageMode: 'both',
+        shuffleTags: true,
+      }
 
       try {
-        TagCanvas.Start('myCanvas', 'tags')
-      } catch (e) {
-        console.error('Canvas error.')
-        console.error(e)
+        instance.Start(CANVAS_ID, TAG_LIST_ID, options)
+        started = true
+      } catch (error) {
+        console.error('TagCanvas failed to start', error)
+      }
+
+      return started
+    }
+
+    if (!startTagCanvas()) {
+      startTimer = setInterval(() => {
+        if (startTagCanvas() && startTimer) {
+          clearInterval(startTimer)
+          startTimer = null
+        }
+      }, 150)
+    }
+
+    return () => {
+      if (startTimer) {
+        clearInterval(startTimer)
+      }
+      const tagCanvasInstance = ('TagCanvas' in globalThis
+        ? (globalThis as typeof globalThis & { TagCanvas?: typeof TagCanvas }).TagCanvas
+        : TagCanvas)
+      if (tagCanvasInstance?.Delete) {
+        try {
+          tagCanvasInstance.Delete(CANVAS_ID)
+        } catch (error) {
+          console.warn('Unable to cleanup TagCanvas', error)
+        }
       }
     }
-  }, [typeof TagCanvas !== 'undefined'])
+  }, [])
 
   return (
-    <div id="myCanvasContainer relative">
+    <div className="relative" id="myCanvasContainer">
       <div className="absolute left-0 top-0 z-10 size-full" />
       <canvas
-        width="500"
-        height="500"
-        id="myCanvas"
+        width={500}
+        height={500}
+        id={CANVAS_ID}
         style={{ maxWidth: '100%' }}
+      />
+
+      <ul
+        id={TAG_LIST_ID}
+        aria-hidden="true"
+        style={hiddenTagStyles}
       >
-        <ul id="tags">
-          {skillsList.map((skill, index) => (
-            <li key={`skill${index.toString()}`}>
-              <a>
-                <Image
-                  src={`/images/logos/${skill}`}
-                  alt={skill}
-                  width={30}
-                  height={30}
-                />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </canvas>
+        {skillsList.map((skill) => (
+          <li key={skill}>
+            <a
+              href="#test"
+              aria-label={skill.replace('.png', '')}
+            >
+              <img
+                src={`/images/logos/${skill}`}
+                alt={skill.replace('.png', '')}
+                width={LOGO_SIZE}
+                height={LOGO_SIZE}
+                loading="eager"
+                decoding="async"
+                style={{ display: 'block', objectFit: 'contain' }}
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
