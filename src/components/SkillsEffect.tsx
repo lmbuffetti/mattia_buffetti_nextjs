@@ -139,7 +139,7 @@ const SkillsEffect = () => {
         {skillsList.map((skill) => (
           <li key={skill}>
             <a
-              href="#canvasImg"
+              href={`#${CANVAS_ID}`}
               aria-label={skill.replace('.png', '')}
             >
               <img
