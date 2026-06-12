@@ -1,3 +1,4 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import {
   faComputer,
@@ -6,7 +7,6 @@ import {
   faHome,
   faPhone,
 } from '@fortawesome/free-solid-svg-icons'
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const sidebarNavigation = [

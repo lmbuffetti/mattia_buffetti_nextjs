@@ -33,7 +33,7 @@ export default function Sidebar() {
           className="menu__btn"
           htmlFor="menu__toggle"
         >
-`          <span className="sr-only">Toggle navigation menu</span>
+          ` <span className="sr-only">Toggle navigation menu</span>
           <span aria-hidden="true" />
         </label>
       </div>
@@ -42,7 +42,7 @@ export default function Sidebar() {
         id="logo-sidebar"
         className={`z-40 h-screen w-64 ${
           isOpen ? 'left-0 w-full translate-x-0' : '-translate-x-full'
-        } fixed h-full border-r border-gray-200 bg-white transition-transform sm:translate-x-0 md:relative md:block dark:border-gray-700 dark:bg-gray-800`}
+        } fixed h-full border-r border-gray-200 bg-white transition-transform duration-300 ease-in-out sm:translate-x-0 md:relative md:block dark:border-gray-700 dark:bg-gray-800`}
       >
         <div className="p-5 pt-16 md:pt-5">
           <Link

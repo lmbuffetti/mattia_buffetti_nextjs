@@ -12,11 +12,15 @@
   color: rgba(255,255,255,.8);
   text-decoration: none;
   background-color: #000000;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
   width: 100%;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 1rem 2.2rem 1rem 0;
 }
 
 .accordion-link h3{
@@ -27,7 +31,6 @@
 .accordion-link i{
   color: #e7d5ff;
   padding: .5rem;
-  
 }
 
 .accordion-link ul{
@@ -47,16 +50,31 @@
   display: flex;
 }
 
+.accordion-link .icon{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 320ms ease-in-out, transform 320ms ease-in-out;
+}
+
+.accordion-link .ion-md-arrow-forward{
+  opacity: 1;
+}
+
 .accordion-link .ion-md-arrow-down{
-  display: none;
+  opacity: 0;
+  transform: translateY(-50%) rotate(-90deg);
 }
 
 .answer{
   max-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
   overflow: hidden;
   position: relative;
   background-color: #000;
-  transition: max-height 650ms;
+  transition: max-height 320ms ease-in-out, opacity 320ms ease-in-out, transform 320ms ease-in-out;
 }
 
 .answer p{
@@ -69,14 +87,19 @@
     padding-bottom: 2rem;
 }
 
-.accordion-item:target .answer{
+.accordion-item.is-open .answer,
+.answer.is-open {
   max-height: 40rem;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.accordion-item:target .accordion-link .ion-md-arrow-forward{
-  display: none
+.accordion-item.is-open .accordion-link .ion-md-arrow-forward{
+  opacity: 0;
+  transform: translateY(-50%) rotate(90deg);
 }
 
-.accordion-item:target .accordion-link .ion-md-arrow-down{
-  display: block;
+.accordion-item.is-open .accordion-link .ion-md-arrow-down{
+  opacity: 1;
+  transform: translateY(-50%) rotate(0deg);
 }

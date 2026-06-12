@@ -41,23 +41,37 @@ const SkillsEffect = () => {
     let started = false
 
     const imagesReady = () => {
-      if (!('document' in globalThis)) return false
+      if (!('document' in globalThis)) {
+        return false
+      }
       const images = Array.from(
-        (globalThis.document).querySelectorAll<HTMLImageElement>(`#${TAG_LIST_ID} img`),
+        globalThis.document.querySelectorAll<HTMLImageElement>(
+          `#${TAG_LIST_ID} img`,
+        ),
       )
       if (!images.length) {
         return false
       }
-      return images.every((img) => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0)
+      return images.every(
+        img => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0,
+      )
     }
 
     const startTagCanvas = () => {
-      if (started) return started
-      if (!imagesReady()) return false
-      const instance = ('TagCanvas' in globalThis
-        ? (globalThis as typeof globalThis & { TagCanvas?: typeof TagCanvas }).TagCanvas
-        : TagCanvas)
-      if (!instance) return false
+      if (started) {
+        return started
+      }
+      if (!imagesReady()) {
+        return false
+      }
+      const instance =
+        'TagCanvas' in globalThis
+          ? (globalThis as typeof globalThis & { TagCanvas?: typeof TagCanvas })
+              .TagCanvas
+          : TagCanvas
+      if (!instance) {
+        return false
+      }
 
       const options = {
         wheelZoom: false,
@@ -108,9 +122,11 @@ const SkillsEffect = () => {
       if (startTimer) {
         clearInterval(startTimer)
       }
-      const tagCanvasInstance = ('TagCanvas' in globalThis
-        ? (globalThis as typeof globalThis & { TagCanvas?: typeof TagCanvas }).TagCanvas
-        : TagCanvas)
+      const tagCanvasInstance =
+        'TagCanvas' in globalThis
+          ? (globalThis as typeof globalThis & { TagCanvas?: typeof TagCanvas })
+              .TagCanvas
+          : TagCanvas
       if (tagCanvasInstance?.Delete) {
         try {
           tagCanvasInstance.Delete(CANVAS_ID)
@@ -122,8 +138,14 @@ const SkillsEffect = () => {
   }, [])
 
   return (
-    <div className="relative" id="myCanvasContainer">
-      <div className="absolute left-0 top-0 z-10 size-full" id="canvasImg" />
+    <div
+      className="relative"
+      id="myCanvasContainer"
+    >
+      <div
+        className="absolute left-0 top-0 z-10 size-full"
+        id="canvasImg"
+      />
       <canvas
         width={500}
         height={500}
@@ -136,7 +158,7 @@ const SkillsEffect = () => {
         aria-hidden="true"
         style={hiddenTagStyles}
       >
-        {skillsList.map((skill) => {
+        {skillsList.map(skill => {
           const skillLabel = skill.replace('.png', '')
           return (
             <li key={skill}>

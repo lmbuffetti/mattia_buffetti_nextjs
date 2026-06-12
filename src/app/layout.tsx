@@ -129,19 +129,19 @@ export default async function RootLayout({
           src="/vendor/particles.min.js"
         />
         <meta
-           name="theme-color"
-           content="#0f172a"
-         />
-         <link
-           rel="canonical"
-           href={SITE_URL}
-         />
-         <Script
-           id="ld-json"
-           type="application/ld+json"
-           strategy="afterInteractive"
-           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-         />
+          name="theme-color"
+          content="#0f172a"
+        />
+        <link
+          rel="canonical"
+          href={SITE_URL}
+        />
+        <Script
+          id="ld-json"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body
         className={`${inter.variable} overflow-x-hidden-hidden w-full`}

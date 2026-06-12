@@ -1,4 +1,8 @@
+'use client'
+
 import '@/styles/accordionSkill.css'
+
+import { useState } from 'react'
 
 const accordionSkill = [
   {
@@ -50,17 +54,32 @@ const accordionSkill = [
 ]
 
 const AccordionSkill = () => {
+  const [openItemId, setOpenItemId] = useState<string | null>(null)
+
+  const handleToggle = (nextId: string) => {
+    if (openItemId === nextId) {
+      setOpenItemId(null)
+      return
+    }
+
+    // Single state swap lets old panel close while new one opens at the same time.
+    setOpenItemId(nextId)
+  }
+
   return (
     <div className="accordion">
       {accordionSkill.map((skill, index) => (
         <div
           key={`skill${index.toString()}`}
-          className="accordion-item"
+          className={`accordion-item ${openItemId === skill.id ? 'is-open' : ''}`}
           id={skill.id}
         >
-          <a
+          <button
+            type="button"
             className="accordion-link"
-            href={`#${skill.id}`}
+            aria-expanded={openItemId === skill.id}
+            aria-controls={`answer-${skill.id}`}
+            onClick={() => handleToggle(skill.id)}
           >
             <div className="flex flex-wrap">
               <h3>{skill.title}</h3>
@@ -72,24 +91,26 @@ const AccordionSkill = () => {
             </div>
             <i className="icon ion-md-arrow-forward" />
             <i className="icon ion-md-arrow-down" />
-          </a>
-          <div className="answer">
+          </button>
+          <div
+            id={`answer-${skill.id}`}
+            className={`answer ${openItemId === skill.id ? 'is-open' : ''}`}
+          >
             {skill.description.map((desc, i) => (
               <p key={`desc${i.toString()}`}>{desc}</p>
             ))}
 
-            {skill.exampleProjects &&
-              skill.exampleProjects.map((project, i) => (
-                <a
-                  key={`project${i.toString()}`}
-                  href={project}
-                  target="_blank"
-                  className="mb-8 block"
-                  rel="noreferrer"
-                >
-                  Example Project
-                </a>
-              ))}
+            {skill.exampleProjects?.map((project, i) => (
+              <a
+                key={`project${i.toString()}`}
+                href={project}
+                target="_blank"
+                className="mb-8 block"
+                rel="noreferrer"
+              >
+                Example Project
+              </a>
+            ))}
           </div>
           <hr />
         </div>
