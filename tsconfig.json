@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
@@ -17,22 +16,22 @@
         "./src/*"
       ],
       "@/components/*": [
-        "src/components/*"
+        "./src/components/*"
       ],
       "@/pages/*": [
-        "src/pages/*"
+        "./src/pages/*"
       ],
       "@/app/*": [
-        "src/app/*"
+        "./src/app/*"
       ],
       "@/styles/*": [
-        "src/assets/styles/*"
+        "./src/assets/styles/*"
       ],
       "@/images/*": [
-        "src/assets/images/*"
+        "./src/assets/images/*"
       ],
       "@/i18n/*": [
-        "src/i18n/*"
+        "./src/i18n/*"
       ]
     },
     "strict": false,
